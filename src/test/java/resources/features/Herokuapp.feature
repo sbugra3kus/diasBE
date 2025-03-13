@@ -32,7 +32,7 @@ Scenario: Get Booking
     And match response == {firstname: '#notnull', lastname: '#notnull'}
 
 
-  Scenario: Create Booking
+ Scenario: Create Booking
   Given path 'booking'
   And request auth
   And request createBooking1
@@ -45,27 +45,30 @@ Scenario: Get Booking
 
 
   Scenario: Update Booking
-    Given path 'booking/7290'
-    And header token = auth
+    Given path 'booking/4014'
+    And header Cookie = 'token='+ auth
     And request createBooking1
     When method put
     Then status 200
+    And match response.firstname == "John"
+    And match response.lastname == "Doe"
+    And match response.totalprice == 111
 
 
 
 Scenario: Partial Update Booking
-  And header token = auth
-  And path '/booking/7287'
+  And header Cookie = 'token='+ auth
+  And path '/booking/5411'
   And request partial
   When method Patch
   Then status 200
 
 
 Scenario: Delete Booking
-  And header Cookie = auth
-  And path '/booking/id'
+  And header Cookie = 'token='+ auth
+  And path '/booking/5411'
   When method Delete
-  Then status 200
+  Then status 201
 
 
 @Ping
