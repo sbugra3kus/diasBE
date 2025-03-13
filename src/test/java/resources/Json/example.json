@@ -1,0 +1,32 @@
+{
+  "createBooking": {
+    "firstname" : "John",
+    "lastname" : "Doe",
+    "totalprice" : 111,
+    "depositpaid" : true,
+    "bookingdates" : {
+      "checkin" : "2025-10-01",
+      "checkout" : "2026-01-01"
+    },
+    "additionalneeds" : "Breakfast"
+  },
+  "Auth": {
+    "username" : "admin",
+    "password" : "password123"
+  },
+  "updateBookings": {
+    "firstname" : "James",
+    "lastname" : "Brown",
+    "totalprice" : 111,
+    "depositpaid" : true,
+    "bookingdates" : {
+      "checkin" : "2018-01-01",
+      "checkout" : "2019-01-01"
+    },
+    "additionalneeds" : "Breakfast"
+  },
+  "patch" : {
+    "firstname" : "Bugra",
+    "lastname" : "Brown"
+  }
+  }
